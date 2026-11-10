@@ -12,8 +12,9 @@ So this is basically a backend Python app that manages a contact directory, but 
 ## Key Features
 * **Object-Oriented Design:** Everything related to the database — connection lifecycles, cursors, transactions — is wrapped inside a solid DatabaseManager class. That way the main execution loop stays clean and modular instead of being one giant mess of SQL calls.
 * **Automated Initialization:** On startup, the app sets up its own environment with CREATE TABLE IF NOT EXISTS, so the schema is always ready before any data gets thrown at it — no manual setup needed.
-* **Security & Parameterization:** Built with security in mind. Every insertion uses parameterized SQL queries (tuple bindings via %s), which strictly prevents SQL injection vulnerabilities.
-* **Stateful CLI Engine:** It runs an interactive while-loop menu that keeps taking user input, routes each command to the database engine, and safely closes any active connections when you exit.
+* **Security & Parameterization:** Built with security in mind. Every insertion uses parameterized SQL queries (tuple bindings via %s), which strictly prevents SQL injection vulnerabilities. 
+* **Stateful CLI Engine:** It runs an interactive while-loop menu that keeps taking user input, routes each command to the database engine, and safely closes any active connections when you exit.   
+
 
 ## Setup & Installation
 1. Ensure you have a MySQL server running locally.
