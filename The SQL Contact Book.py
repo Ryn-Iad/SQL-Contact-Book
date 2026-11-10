@@ -10,4 +10,10 @@ class DatabaseManager:
         )
         self.mycursor = self.mydb.cursor()
         self.mycursor.execute("CREATE TABLE IF NOT EXISTS contacts (id INT AUTO_INCREMENT PRIMARY KEY , name VARCHAR(255) , phone VARCHAR(10) )")
+    def add_contact(self, name, phone):
+        sql = "INSERT INTO contacts (name,phone) VALUES (%s,%s)"
+        entry = (name,phone)
+        self.mycursor.execute(sql,entry)
+        self.mydb.commit()
+    
     
