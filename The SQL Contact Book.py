@@ -15,5 +15,17 @@ class DatabaseManager:
         entry = (name,phone)
         self.mycursor.execute(sql,entry)
         self.mydb.commit()
+    def get_all_contacts(self):
+        sql = "SELECT * FROM contacts"
+        self.mycursor.execute(sql)
+        result = self.mycursor.fetchall()
+        return result
     
+    def close(self):
+        self.mycursor.close()
+        self.mydb.close()
+
+
+
+
     
